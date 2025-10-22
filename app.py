@@ -9,7 +9,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # === 1. 環境変数の読み込み ===
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
 st.write("🔑 OpenAI API Key is set." if api_key else "❌ OpenAI API Key is not set.")
 # === 2. Streamlit UI ===
 st.title("📘 自己研鑽休暇レポート(AI付き)")
